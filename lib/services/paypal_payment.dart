@@ -54,17 +54,17 @@ class PaypalPaymentState extends State<PaypalPayment> {
         }
       } catch (e) {
         log('exception: ' + e.toString());
-        // final snackBar = SnackBar(
-        //   content: Text(e.toString()),
-        //   duration: Duration(seconds: 10),
-        //   action: SnackBarAction(
-        //     label: 'Close',
-        //     onPressed: () {
-        //       // Some code to undo the change.
-        //     },
-        //   ),
-        // );
-        // _scaffoldKey.currentState.showSnackBar(snackBar);
+        final snackBar = SnackBar(
+          content: Text(e.toString()),
+          duration: Duration(seconds: 10),
+          action: SnackBarAction(
+            label: 'Close',
+            onPressed: () {
+              // Some code to undo the change.
+            },
+          ),
+        );
+        _scaffoldKey.currentState.showSnackBar(snackBar);
       }
     });
   }
@@ -136,9 +136,13 @@ class PaypalPaymentState extends State<PaypalPayment> {
     return temp;
   }
 
+  //https://www.sandbox.paypal.com/webapps/return.example.com/?paymentId=PAYID-L36PDAQ9FV90938SX193050T&token=EC-29W00189H4603261D&PayerID=TX59EA28ZCGMC
+
   @override
   Widget build(BuildContext context) {
-    //log("checkout url" + checkoutUrl);
+    if (checkoutUrl != null) {
+      log("checkout url -> " + checkoutUrl);
+    }
 
     if (checkoutUrl != null) {
       return Scaffold(
@@ -159,7 +163,7 @@ class PaypalPaymentState extends State<PaypalPayment> {
               if (payerID != null) {
                 services.executePayment(executeUrl, payerID, accessToken).then((id) {
                   widget.onFinish(id);
-                  Navigator.of(context).pop();
+                  //Navigator.of(context).pop();
                 });
               } else {
                 Navigator.of(context).pop();

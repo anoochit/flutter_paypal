@@ -54,17 +54,17 @@ class PaypalPaymentState extends State<PaypalPayment> {
         }
       } catch (e) {
         log('exception: ' + e.toString());
-        final snackBar = SnackBar(
-          content: Text(e.toString()),
-          duration: Duration(seconds: 10),
-          action: SnackBarAction(
-            label: 'Close',
-            onPressed: () {
-              // Some code to undo the change.
-            },
-          ),
-        );
-        _scaffoldKey.currentState.showSnackBar(snackBar);
+        // final snackBar = SnackBar(
+        //   content: Text(e.toString()),
+        //   duration: Duration(seconds: 10),
+        //   action: SnackBarAction(
+        //     label: 'Close',
+        //     onPressed: () {
+        //       // Some code to undo the change.
+        //     },
+        //   ),
+        // );
+        // _scaffoldKey.currentState.showSnackBar(snackBar);
       }
     });
   }
@@ -138,7 +138,7 @@ class PaypalPaymentState extends State<PaypalPayment> {
 
   @override
   Widget build(BuildContext context) {
-    log("checkout url" + checkoutUrl);
+    //log("checkout url" + checkoutUrl);
 
     if (checkoutUrl != null) {
       return Scaffold(

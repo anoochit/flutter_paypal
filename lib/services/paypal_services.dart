@@ -9,9 +9,9 @@ class PaypalServices {
 
   // change clientId and secret with your own, provided by paypal
   String clientId =
-      'Ab4vS4vmfQFgUuQMH49F9Uy3L1FdNHtfGrASCyjNijm_EkHWCFM96ex0la-YFbwavw41R3rTKU3k_Bbm';
+      'AfMdYojEv4Ur7jh47e8dW2cYadXfhF_lW46nsufX2CY5u_SDYAz_gxGlz6hV02038px2tuHZ7VPrl2Wx';
   String secret =
-      'EDjvPfYgTYqdYWR2BfOiBW4dz_jeeuadqH7Z98pZMDvY33PcViiooqYFWVPFSGbfKBfNOb3LnroSI1hv';
+      'EDuufmXwaHtS69s59pMwQNGB0YwXI4tCqAR4hgv-LNLRXzNq30Q5b9gdmDP8Kre9OjVoBhX0upu-EJFY';
 
   // for getting the access token from Paypal
   Future<String> getAccessToken() async {
